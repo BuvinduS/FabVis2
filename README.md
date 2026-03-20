@@ -42,7 +42,7 @@ $Precision = TP\ /(TP\ + FP)$
 
 Out of all the detections, how many were correct?
 
-> $High\ precision \rightarrow$ few false alarms
+> $High\ precision \rightarrow$ few false alarms <br>
 > $Low\ precision \rightarrow$ Many incorrect detections
 
 ## 6) Recall
@@ -51,7 +51,7 @@ $Recall = TP\ /(TP\ + FN)$
 
 Out of all real objects, how many did we detect
 
-> $High\ recall \rightarrow$ detects most objects
+> $High\ recall \rightarrow$ detects most objects <br>
 > $Low\ recall \rightarrow$ misses many objects
 
 ## 7) mAP (Mean Average Precision)
@@ -62,5 +62,5 @@ $mAP\ = Mean\ of\ Average\ Precision\ (AP)\ across\ all\ classes$
 
 $mAP\ = (AP_1 + AP_2 + \ ...\ + AP_n)\ /\ n\ $
 
-Where n = number of classes and
+Where n = number of classes and <br>
 $AP = Area\ under\ the\ Precision-Recall\ curve\ $
