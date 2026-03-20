@@ -14,7 +14,7 @@
 
 - A prediction is a **True Positive** if
   - Correct class
-  - $IoU\ $ $\geq$ $threshold$ (we use 0.5)
+  - $IoU\ \geq threshold$ (we use 0.5)
   - Matched to a ground truth box
 
 > Correctly detected
@@ -22,7 +22,7 @@
 ## 3) False Positive (FP)
 
 - A prediction is a **False Positive** if
-  - No matching ground truth ($IoU\ $too low)
+  - No matching ground truth ($IoU$ too low)
   - Wrong class
   - Duplicate detection of the same
 
