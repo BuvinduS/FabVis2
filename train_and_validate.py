@@ -4,6 +4,7 @@ from dataset import FabVisDataset
 from torch.utils.data import DataLoader
 from torchvision.models.detection import fasterrcnn_resnet50_fpn
 import torch.optim as optim
+from torchvision.models.detection import FasterRCNN_ResNet50_FPN_Weights
 
 TRAIN_IMG_PATH = "FabVisDataset/train/images"
 TRAIN_LBL_PATH = "FabVisDataset/train/labels"
@@ -64,7 +65,7 @@ validation_dataset = FabVisDataset(VALIDATION_IMG_PATH, VALIDATION_LBL_PATH)
 val_Loader = DataLoader(validation_dataset, batch_size=4, shuffle=False, collate_fn=collate_fn)
 
 # Load the model
-model = fasterrcnn_resnet50_fpn(pretrained=True)
+model = fasterrcnn_resnet50_fpn(weights=FasterRCNN_ResNet50_FPN_Weights.DEFAULT)
 
 # Replace the classifier head (VERY important):
 num_classes = 12
@@ -81,6 +82,6 @@ images, targets = next(iter(train_loader))
 print(images[0].shape)
 print(targets[0])
 
-train_model(model, train_loader, val_Loader, num_epochs=10, device=device, optimizer=optimizer)
+train_model(model, train_loader, val_Loader, num_epochs=20, device=device, optimizer=optimizer)
 
-torch.save(model.state_dict(), "trained_models/FASTRCNN_model_10_epochs.pth")
+torch.save(model.state_dict(), "trained_models/FASTRCNN_model_20_epochs.pth")
